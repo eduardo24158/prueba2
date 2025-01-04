@@ -12,7 +12,7 @@ class ContactosController {
   return res.status(400).send('Todos los campos son obligatorios');
 }
 
-  const ip = req.ip;
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   console.log(ip)
   const fechaHora = new Date().toISOString();
   
@@ -20,7 +20,7 @@ class ContactosController {
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
     
     
-    const ipapURL=`http://ip-api.com/json/24.48.0.1`;
+    const ipapURL=`http://ip-api.com/json/${ip}`;
     
     axios
     .get(ipapURL)
@@ -37,7 +37,7 @@ class ContactosController {
     ContactosModel.guardarContacto(nuevoContacto, (err) => {
       if (err) {
       console.error('Error al guardar el contacto:', err);
-        return res.status(500).send('Error al guardar los datos');
+        return res.status(500).send('Error al guardar los datos ');
       }
 
         EnviarCorreo.EnviarCorreo(correo);
