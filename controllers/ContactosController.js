@@ -12,7 +12,7 @@ class ContactosController {
   return res.status(400).send('Todos los campos son obligatorios');
 }
 
-  const ip = req.ip;
+  const ip = req.headers['x-forwarded-for'];
   console.log(ip)
   const fechaHora = new Date().toISOString();
   
