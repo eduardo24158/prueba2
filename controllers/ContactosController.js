@@ -22,7 +22,7 @@ class ContactosController {
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
     
     
-    const ipapURL=`http://ip-api.com/json/?fields=61439`;
+    const ipapURL=`http://ip-api.com/json/${clientIp}`;
     axios
     .get(ipapURL)
     .then((response) => {
