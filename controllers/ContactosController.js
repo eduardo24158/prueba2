@@ -13,7 +13,9 @@ class ContactosController {
 }
 
   const ip = req.headers['x-forwarded-for'];
-  console.log(ip)
+  const ipList = ip.split(',');
+  const clientIp = ipList[0].trim();
+  console.log(clientIp)
   const fechaHora = new Date().toISOString();
   
     const secretKey = process.env.SECRET_KEY;
@@ -29,7 +31,7 @@ class ContactosController {
 
     const pais=data.country;
     console.log(pais)
-    const nuevoContacto = { email, nombre, comentario, ip, fechaHora, pais };
+    const nuevoContacto = { email, nombre, comentario, clientIp, fechaHora, pais };
     const correo= EnviarCorreo.CrearCorreo(email, nombre,comentario,ip,fechaHora,pais);
       console.log(correo)
     
