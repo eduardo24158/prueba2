@@ -9,13 +9,14 @@ const sqlite3 = require('sqlite3');
           console.log('Conectado a la base de datos SQLite')}})
     
       static guardarContacto(contacto, callback) {
-    const query = `INSERT INTO contactos (email, nombre, comentario, ip, fecha_hora) VALUES (?, ?, ?, ?, ?)`;
+    const query = `INSERT INTO contactos (email, nombre, comentario, ip, fecha_hora,pais) VALUES (?, ?, ?, ?, ?,?)`;
     this.db.run(query, [
       contacto.email,
       contacto.nombre,
       contacto.comentario,
       contacto.ip,
-      contacto.fechaHora
+      contacto.fechaHora,
+      contacto.pais
     ], callback);
   }
 

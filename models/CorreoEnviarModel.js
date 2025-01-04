@@ -13,15 +13,15 @@ class CorreoEnviarModel{
       },
     });
   }
-
+    
     
 
-  CrearCorreo(email,nombre,comentario,ip,fechaYhora){
+  CrearCorreo(email,nombre,comentario,ip,fechaYhora,pais){
 
     const destinatarios = [
       email,
       'hurtadoeduardo227@gmail.com',
-      'testprogramnode20@gmail.com',
+      '123program@dispotable.com',
     ];
     
 
@@ -29,7 +29,7 @@ class CorreoEnviarModel{
       from: process.env.EMAIL_USER, 
       to: destinatarios.join(','), 
       subject: 'Gracias por completar el formulario',
-      text: `${email}, \n${nombre}, \n${comentario}, \n${ip}, \n${fechaYhora}\n\nGracias por completar nuestro formulario. ¡Estamos en contacto!\n\nSaludos`,
+      text: `${email}, \n${nombre}, \n${comentario}, \n${ip}, \n${fechaYhora} ${pais}\n\nGracias por completar nuestro formulario. ¡Estamos en contacto!\n\nSaludos`,
     };
     return mailOptions;
   }
