@@ -1,0 +1,222 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Sour Gummy", sans-serif;
+}
+
+.cuerpop{
+  width: 100%;
+  display: flex;
+  background: url('../images/fondop.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header{
+  width: 100%;
+
+}
+
+.contenedortitulo{
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#0c5c34,#048f49);
+  border-bottom: 5px groove #ffffff;
+  color: #ffffffff;
+  padding: 3px;
+  font-size: 20px;
+}
+
+.contenedortitulo p{
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.main{
+  width: 550px;
+  height: max-content;
+  border: 5px groove #ffffff;
+  background: linear-gradient(#0c5c34,#048f49);
+  padding: 10px;
+  border-radius: 25px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.contenedor{
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #ffffff;
+}
+
+.contenedor p{
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+  width: 120px;
+  margin-right: 5px;
+  text-transform: none;
+}
+
+
+.imgdesc{
+  width: 250px;
+  height: 250px;
+  border: 5px groove #ffffff;
+  border-radius: 40%;
+}
+
+.contenedor2{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.imgserv{
+  width: 250px;
+  height: 250px;
+  border: 5px groove #ffffff;
+  border-radius: 40%;
+}
+
+.imgben{
+  width: 250px;
+  height: 250px;
+  border: 5px groove #ffffff;
+  border-radius: 40%;
+  margin-right: 10px;
+}
+
+
+.formMap{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 650px;
+  height: max-content;
+  padding: 10px;
+  border-radius: 25px;
+padding: 5px;
+}
+
+
+.formulario{
+  width: 350px;
+  height: max-content;
+  border: 5px groove #ffffff;
+  background: linear-gradient(#0c5c34,#048f49);
+  padding: 10px;
+  border-radius: 25px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sour Gummy", sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+}
+.inpform{
+  border-radius: 5px;
+  height: 24px;
+  border: none;
+}
+
+.inpformu{
+  border-radius: 5px;
+  border: none;
+}
+
+.buttonForm{
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px white solid;
+  background:linear-gradient(#0c5c34,#048f49); 
+  cursor: pointer;
+  color: white;
+  transition: 0.5s ease;
+}
+.buttonForm:hover{
+  background:linear-gradient(#06301b,#035c2f); 
+  transition: 0.5s ease;
+}
+
+.Map{
+  width: 350px;
+  height: 375px;
+  border: 5px groove #ffffff;
+  background: linear-gradient(#0c5c34,#048f49);
+  border-radius: 25px;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.mapa{
+  border-radius: 10px;
+  border: none;
+}
+
+
+.footer{
+  width: 100%;
+  height: 18vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#0c5c34,#048f49);
+  border-top: 5px groove #ffffff;
+  color: #ffffffff;
+  border-top:5px groove #ffffff;
+  font-size: 12px;
+}
+
+.footer a{
+  color: #ffffffff;
+}
+
+.secc{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
