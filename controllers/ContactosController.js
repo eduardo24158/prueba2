@@ -32,7 +32,7 @@ class ContactosController {
     const pais=data.country;
     console.log(pais)
     const nuevoContacto = { email, nombre, comentario, clientIp, fechaHora, pais };
-    const correo= EnviarCorreo.CrearCorreo(email, nombre,comentario,ip,fechaHora,pais);
+    const correo= EnviarCorreo.CrearCorreo(email, nombre,comentario,clientIp,fechaHora,pais);
       console.log(correo)
     
     ContactosModel.guardarContacto(nuevoContacto, (err) => {

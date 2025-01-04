@@ -14,7 +14,7 @@ const sqlite3 = require('sqlite3');
       contacto.email,
       contacto.nombre,
       contacto.comentario,
-      contacto.ip,
+      contacto.clientIp,
       contacto.fechaHora,
       contacto.pais
     ], callback);
