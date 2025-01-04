@@ -20,8 +20,6 @@ class CorreoEnviarModel{
 
     const destinatarios = [
       email,
-      'hurtadoeduardo227@gmail.com',
-      '123program@dispotable.com',
     ];
     
 
