@@ -169,6 +169,8 @@ padding: 5px;
   cursor: pointer;
   color: white;
   transition: 0.5s ease;
+  text-decoration: none;
+  text-align: center;
 }
 .buttonForm:hover{
   background:linear-gradient(#06301b,#035c2f); 

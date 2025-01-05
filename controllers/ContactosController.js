@@ -9,7 +9,9 @@ class ContactosController {
 
     const { email, nombre, comentario,'g-recaptcha-response': token} = req.body;
     if (!token || !email || !nombre || !comentario) {
-  return res.status(400).send('Todos los campos son obligatorios');
+  return res.status(400).render("../views/confirmacion.ejs",{
+    message:"Todos los campos son obligatorios",
+  })
 }
 
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;  
@@ -20,11 +22,18 @@ class ContactosController {
   const fechaHora = new Date().toISOString();
   const secretKey = process.env.SECRET_KEY;
 
-    const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
-    
-    
+    axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
+      params: {
+          secret: secretKey,
+          response: token
+      }
+  })
+  .then((response) => {
+      const data = response.data;
+      console.log(data)
+    })
 
-    const ipapURL=`http://ip-api.com/json/${clientIp}`;
+    const ipapURL=`http://ip-api.com/json/?fields=61439`;
     axios
     .get(ipapURL)
     .then((response) => {
@@ -40,11 +49,16 @@ class ContactosController {
     ContactosModel.guardarContacto(nuevoContacto, (err) => {
       if (err) {
       console.error('Error al guardar el contacto:', err);
-        return res.status(500).send('Error al guardar los datos ');
+      
+        return res.status(500).render("../views/error.ejs",{
+          message:"Error al guadar los datos",
+        })
       }
 
         EnviarCorreo.EnviarCorreo(correo);
-        res.send('¡Formulario enviado con éxito!');
+        res.render("../views/confirmacion.ejs",{
+          message:"formulario hecho con exito!",
+        });
         
       });
     })
