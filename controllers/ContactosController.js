@@ -12,16 +12,18 @@ class ContactosController {
   return res.status(400).send('Todos los campos son obligatorios');
 }
 
-  const ip = req.headers['x-forwarded-for'];
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;  
+  console.log(ip);
   const ipList = ip.split(',');
   const clientIp = ipList[0].trim();
-  console.log(clientIp)
+
   const fechaHora = new Date().toISOString();
-  
-    const secretKey = process.env.SECRET_KEY;
+  const secretKey = process.env.SECRET_KEY;
+
     const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`;
     
     
+
     const ipapURL=`http://ip-api.com/json/${clientIp}`;
     axios
     .get(ipapURL)
@@ -30,11 +32,11 @@ class ContactosController {
       console.log(data)
 
     const pais=data.country;
-    console.log(pais)
+
     const nuevoContacto = { email, nombre, comentario, clientIp, fechaHora, pais };
     const correo= EnviarCorreo.CrearCorreo(email, nombre,comentario,clientIp,fechaHora,pais);
       console.log(correo)
-    
+
     ContactosModel.guardarContacto(nuevoContacto, (err) => {
       if (err) {
       console.error('Error al guardar el contacto:', err);
@@ -45,7 +47,6 @@ class ContactosController {
         res.send('¡Formulario enviado con éxito!');
         
       });
-
     })
 }
 }

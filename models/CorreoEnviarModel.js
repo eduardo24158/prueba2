@@ -13,15 +13,12 @@ class CorreoEnviarModel{
       },
     });
   }
-    
-    
 
   CrearCorreo(email,nombre,comentario,ip,fechaYhora,pais){
 
     const destinatarios = [
       email,
     ];
-    
 
     const mailOptions = {
       from: process.env.EMAIL_USER, 
@@ -39,7 +36,6 @@ class CorreoEnviarModel{
     }else{
       console.log("correo enviado con exito")
     }
-
   })
   }  
 
