@@ -33,7 +33,7 @@ class ContactosController {
       console.log(data)
     })
 
-    const ipapURL=`http://ip-api.com/json/?fields=61439`;
+    const ipapURL=`http://ip-api.com/json/${clientIp}`;
     axios
     .get(ipapURL)
     .then((response) => {
