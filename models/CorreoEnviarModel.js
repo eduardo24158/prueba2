@@ -18,6 +18,7 @@ class CorreoEnviarModel{
 
     const destinatarios = [
       email,
+      "programacion2ais@dispotable.com"
     ];
 
     const mailOptions = {
